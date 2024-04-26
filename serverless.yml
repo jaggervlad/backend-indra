@@ -1,0 +1,29 @@
+service: IndraApi
+frameworkVersion: "3"
+
+useDotenv: true
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  stage: dev
+  region: us-east-1
+  memorySize: 2048
+  environment:
+    PORT: 3000
+    DATABASE_URL: ${env:DATABASE_URL}
+    SW_URL_API: ${env:SW_URL_API}
+  apiGateway:
+    restApiId: xxxxxxxx # ID de tu API Gateway
+    restApiRootResourceId: yyyyyyyy # ID del recurso asociado
+
+plugins:
+  - serverless-offline
+  - serverless-dotenv-plugin
+
+functions:
+  api:
+    handler: handler.startApp
+    events:
+      - http: ANY /{proxy+}
+      - http: ANY /
