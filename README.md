@@ -7,7 +7,8 @@ Este proyecto es un servicio API desarrollado con Serverless, Express, Typescrip
 Corre el script sql en tu base de datos: db.sql
 
 Añade tu archivo .env con las variables de ejemplo en .env-example
- - DATABASE_URL=proveer url
+
+ - DATABASE_URL=mysql://admin:indra2024**@indra.cbcgko4026ku.us-east-1.rds.amazonaws.com:3306/indra
  - SW_URL_API=https://swapi.py4e.com/api
 
 Asegúrate de tener instalados los siguientes elementos antes de ejecutar la aplicación:
