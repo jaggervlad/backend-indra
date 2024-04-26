@@ -26,7 +26,7 @@ const createApp = () => {
   app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
 
   // Routes
-  app.use('/dev/api', publicRoutes());
+  app.use('/api', publicRoutes());
 
   // Handle Error Middleware
   app.use(errorMiddleware);
